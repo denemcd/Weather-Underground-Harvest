@@ -58,6 +58,7 @@ if response.status_code == 200: # If the response code is 200 (sucessful)
         f.write("<tr><td><b>" + key + ": </b></td><td>" + str(
             weatherreadings[key]) + "</td></tr>\n")  # Insert the individual key and value
     f.write("<tr><td><b>units:</b></td><td>" + unitfull + "</td></tr>\n")
+    f.write('<tr><td><b>station address:</b></td><td><a href="https://www.wunderground.com/personal-weather-station/dashboard?"' + stationid + ">" + weatherreadings["neighborhood"] + '</a></td></tr>')
     f.write("</table>\n")
     f.write("</body>\n</html>")
     f.close()
