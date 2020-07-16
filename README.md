@@ -10,4 +10,4 @@ You will need:
 
 Save these details in the config.json file. Within the config.json file you can also specify the units you want returned, m = metric and e = imperial (English).
 
-The data is output to a file named current_observations.html
+The data is output to a file named current_observations.html. This will be over written if it already exists.
