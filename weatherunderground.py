@@ -13,6 +13,10 @@ configuration.close()
 apikey = config["apikey"]
 stationid = config["stationid"]
 units = config["units"] # If you require imperial change this in the config file to
+if units == "m":
+    unitfull = "Metric"
+if units == "e":
+    untilfull = "Imperial"
 
 # Build URL
 url = url.replace("REPLACESTATIONID", stationid)
@@ -53,6 +57,7 @@ if response.status_code == 200: # If the response code is 200 (sucessful)
     for key in weatherreadings:
         f.write("<tr><td><b>" + key + ": </b></td><td>" + str(
             weatherreadings[key]) + "</td></tr>\n")  # Insert the individual key and value
+    f.write("<tr><td><b>units</b></td><td>" + unitfull + "</td>/tr>\n")
     f.write("</table>\n")
     f.write("</body>\n</html>")
     f.close()
